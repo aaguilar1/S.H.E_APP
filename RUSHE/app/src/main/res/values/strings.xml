@@ -4,12 +4,22 @@
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_register">Register</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_game">Go To Game</string>
+    <string name="action_quit">Quit</string>
+    <string name="action_standings">Standings</string>
+    <string name="action_portfolio">Portfolio</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="error_duplicate_email">This email address is already in use</string>
     <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_user_pass">Invalid Email/Password combination</string>
     <string name="error_invalid_password">This password is too short</string>
+    <string name="error_different_password">Passwords do not match</string>
+    <string name="error_invalid_username">This username is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
+    <string name="app_intro">Tutorial</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
