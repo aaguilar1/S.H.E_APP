@@ -25,6 +25,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -34,6 +37,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -42,11 +46,22 @@ import static android.Manifest.permission.READ_CONTACTS;
 
 public class MainMenuActivity extends LoginActivity {
 
+    private WebView mWebView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_mainmenu);
+        mWebView = (WebView) findViewById(R.id.Internet_access);
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        mWebView.loadUrl("http://rushe.rutgers.edu/");
+        mWebView.setWebViewClient(new WebViewClient());
         }
+
+
+
+
+
+
     }

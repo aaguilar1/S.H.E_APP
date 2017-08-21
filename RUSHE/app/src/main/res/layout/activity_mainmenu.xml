@@ -16,6 +16,67 @@
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:layout_margin="16dp"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:weightSum="1">
+
+    <TabHost
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_x="-33dp"
+        android:layout_y="-100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/Internet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <SearchView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <WebView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/Internet_access"
+                        android:layout_weight="0.71" >
+
+                    </WebView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Chats"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Sign_ins"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
 
 </LinearLayout>

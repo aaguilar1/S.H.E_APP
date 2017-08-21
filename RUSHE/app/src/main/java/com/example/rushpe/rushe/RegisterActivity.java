@@ -47,7 +47,7 @@ public class RegisterActivity extends LoginActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mainmenu);
+        setContentView(R.layout.activity_register);
 
         mEmailView = (EditText) findViewById(R.id.email);
         mNameView = (EditText) findViewById(R.id.name);
@@ -79,6 +79,7 @@ public class RegisterActivity extends LoginActivity {
 
     private boolean attemptRegister() {
 
+//        This will allow for error alerts
         mEmailView.setError(null);
         mNameView.setError(null);
         mPasswordView.setError(null);
@@ -151,6 +152,7 @@ public class RegisterActivity extends LoginActivity {
         return true;
     }
 
+//    Inserting information into database
     private boolean attemptInsert() {
         mEmailView.setError(null);
 
@@ -164,12 +166,13 @@ public class RegisterActivity extends LoginActivity {
         String password = mPasswordView.getText().toString();
 
         try {
-            URL url = new URL("http://parallel.gg/rags-to-riches/register-account.php");
+            URL url = new URL("http://aaparallel.com/register-account.php");
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
             OutputStream outputStream = httpURLConnection.getOutputStream();
+//            Write into buffer
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
             String post_data = URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode("" + email,"UTF-8")+"&";
             post_data += URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode("" + username,"UTF-8")+"&";
@@ -231,9 +234,9 @@ public class RegisterActivity extends LoginActivity {
         return username.length() > 4;
     }
 
-    public boolean onCreateOptionsmenu(Menu menu){
-        return false;
-    }
+//    public boolean onCreateOptionsmenu(Menu menu){
+//        return false;
+//    }
 
 
 }
